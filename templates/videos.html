@@ -1,0 +1,253 @@
+<style>
+ 
+ body {
+  margin: 10;
+ } 
+
+ .main {
+ background-color: rgba(255, 255, 255, 0.9);
+ margin-top: 100px;
+ padding-bottom: 50px;
+ }
+ .main h1 {
+ font-size: 3.5em;
+ font-family: Arial;
+ color: #2E3759;
+ }
+ .main h2 {
+ font-size: 2em;
+ font-family: Arial;
+ color: #2E3759;
+ }
+ .main h3 {
+ font-size: 2em;
+ font-family: Arial;
+ color: #2E3759;
+ }
+ .main p {
+ font-size:1em;
+ font-family: Arial;
+ color: #2E3759;
+ }
+
+ body {
+ background-image: url("../static/css/images/markus-spiske-1592509-unsplash.jpg");
+ background-size: cover;
+ background-repeat: repeat;
+ }
+
+ /* Create three unequal columns that floats next to each other */
+.column {
+  float: auto;
+  padding: 30px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 35%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 30%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Search Results</title>
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/css/custom.css" rel="stylesheet">
+</head>
+<div class="overlay"></div>
+<body>
+    <div class="main">
+      <div style="text-align:center">
+        <br><br><br><br><br>
+        <div class="starter-template">
+          <img src="../static/css/images/toolup3.png" alt="YouTube Search" width="25%" height="25%"><br><br>
+          <img src="../static/css/images/youtube_logo.png" alt="YouTube Search" width="10%" height="10%"><br><br>
+          <h2>Search Results</h2>
+          <br><br>
+          <div class="row">
+            <div class="column side">
+              <h4>{{ titles[0] }}</h4>
+              <p>Summary<br>{{ summaries[0] }}</p>
+            </div>
+            <div class="column middle">
+              <iframe width="420" height="315" src="https://www.youtube.com/embed/{{ video_ids[0] }}"></iframe>
+            </div>
+            <div class="column side">
+              <button onclick="myFunction0()"><span>Click for common tools used:</span></button>
+              <div class="toshow" id="0" style="display:none">
+                <u>Tools Mentioned in Video</u>:<br>
+                {% for mtool in m_tools[0][:-1] %}
+                {{ mtool.replace("'","") }} ,
+                {% endfor %}
+                {{ m_tools[0][-1].replace("'","") }}<br><br>
+                <u>Additional Tools Recommended</u>:<br>
+                {% for rtool in r_tools[0][:-1] %}
+                {{ rtool.replace("'","") }} ,
+                {% endfor %}
+                {{ r_tools[0][-1].replace("'","") }}<br><br>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column side">
+              <h4>{{ titles[1] }}</h4>
+              <p>Summary<br>{{ summaries[1] }}</p>
+            </div>
+            <div class="column middle">
+              <iframe width="420" height="315" src="https://www.youtube.com/embed/{{ video_ids[1] }}"></iframe>
+            </div>
+            <div class="column side">
+              <button onclick="myFunction1()"><span>Click for common tools used:</span></button>
+              <div class="toshow" id="1" style="display:none">
+                <u>Tools Mentioned in Video</u>:<br>
+                {% for mtool in m_tools[1][:-1] %}
+                {{ mtool.replace("'","") }} ,
+                {% endfor %}
+                {{ m_tools[1][-1].replace("'","") }}<br><br>
+                <u>Additional Tools Recommended</u>:<br>
+                {% for rtool in r_tools[1][:-1] %}
+                {{ rtool.replace("'","") }} ,
+                {% endfor %}
+                {{ r_tools[1][-1].replace("'","") }}<br><br>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column side">
+              <h4>{{ titles[2] }}</h4>
+              <p>Summary<br>{{ summaries[2] }}</p>
+            </div>
+            <div class="column middle">
+              <iframe width="420" height="315" src="https://www.youtube.com/embed/{{ video_ids[2] }}"></iframe>
+            </div>
+            <div class="column side">
+             <button onclick="myFunction2()"><span>Click for common tools used:</span></button>
+              <div class="toshow" id="2" style="display:none">
+                <u>Tools Mentioned in Video</u>:<br>
+                {% for mtool in m_tools[2][:-1] %}
+                {{ mtool.replace("'","") }} ,
+                {% endfor %}
+                {{ m_tools[2][-1].replace("'","") }}<br><br>
+                <u>Additional Tools Recommended</u>:<br>
+                {% for rtool in r_tools[2][:-1] %}
+                {{ rtool.replace("'","") }} ,
+                {% endfor %}
+                {{ r_tools[2][-1].replace("'","") }}<br><br>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column side">
+              <h4>{{ titles[3] }}</h4>
+              <p>Summary<br>{{ summaries[3] }}</p>
+            </div>
+            <div class="column middle">
+              <iframe width="420" height="315" src="https://www.youtube.com/embed/{{ video_ids[3] }}"></iframe>
+            </div>
+            <div class="column side">
+              <button onclick="myFunction3()"><span>Click for common tools used:</span></button>
+              <div class="toshow" id="3" style="display:none">
+                <u>Tools Mentioned in Video</u>:<br>
+                {% for mtool in m_tools[3][:-1] %}
+                {{ mtool.replace("'","") }} ,
+                {% endfor %}
+                {{ m_tools[3][-1].replace("'","") }}<br><br>
+                <u>Additional Tools Recommended</u>:<br>
+                {% for rtool in r_tools[3][:-1] %}
+                {{ rtool.replace("'","") }} ,
+                {% endfor %}
+                {{ r_tools[3][-1].replace("'","") }}<br><br>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column side">
+              <h4>{{ titles[4] }}</h4>
+              <p>Summary<br>{{ summaries[4] }}</p>
+            </div>
+            <div class="column middle">
+              <iframe width="420" height="315" src="https://www.youtube.com/embed/{{ video_ids[4] }}"></iframe>
+            </div>
+            <div class="column side">
+              <button onclick="myFunction4()"><span>Click for common tools used:</span></button>
+              <div class="toshow" id="4" style="display:none">
+                <u>Tools Mentioned in Video</u>:<br>
+                {% for mtool in m_tools[4][:-1] %}
+                {{ mtool.replace("'","") }} ,
+                {% endfor %}
+                {{ m_tools[4][-1].replace("'","") }}<br><br>
+                <u>Additional Tools Recommended</u>:<br>
+                {% for rtool in r_tools[4][:-1] %}
+                {{ rtool.replace("'","") }} ,
+                {% endfor %}
+                {{ r_tools[4][-1].replace("'","") }}<br><br>
+              </div>
+            </div>
+          </div>
+
+
+          <script>
+          function myFunction0() {
+            var x = document.getElementById('0');
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+              x.style.display = "none";
+            }
+          }
+
+          function myFunction1() {
+            var x = document.getElementById('1');
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+              x.style.display = "none";
+            }
+          }
+
+          function myFunction2() {
+            var x = document.getElementById('2');
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+              x.style.display = "none";
+            }
+          }
+
+          function myFunction3() {
+            var x = document.getElementById('3');
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+              x.style.display = "none";
+            }
+          }
+
+          function myFunction4() {
+            var x = document.getElementById('4');
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+              x.style.display = "none";
+            }
+          }
+          </script>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
+</html>
